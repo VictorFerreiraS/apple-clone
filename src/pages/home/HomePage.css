@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* DESKTOP */
+.item-0 {
+  grid-area: iphone;
+}
+.item-1 {
+  grid-area: iphone-se;
+}
+.item-2 {
+  grid-area: watch;
+}
+.item-3 {
+  grid-area: wwdc22;
+}
+.item-4 {
+  grid-area: ipad;
+}
+.item-5 {
+  grid-area: studioDisplay;
+}
+.item-6 {
+  grid-area: macStudio;
+}
+.item-7 {
+  grid-area: soip;
+}
+.item-8 {
+  background-image: none;
+  color: aliceblue;
+  grid-area: atv;
+}
+
+.home-page-products {
+  display: grid;
+  padding: 10px;
+  grid:
+    "iphone iphone"
+    "iphone-se iphone-se"
+    "watch watch"
+    "wwdc22 ipad"
+    "studioDisplay macStudio"
+    "soip atv";
+  grid-gap: 10px 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item {
+  width: 100%;
+  font-size: 56px;
+}
+
+.background-image-wraper {
+  width: 100%;
+  text-align: center;
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.headline {
+  font-size: 46px;
+  padding-top: 47px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.subtitle {
+  font-size: 28px;
+  line-height: 1.10722;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 6px;
+}
+
+.links {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1.381;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  margin-top: 0.65em;
+}
+
+.links > a {
+  margin: 10px 20px;
+  color: #1472d0;
+  text-decoration: none;
+  background-image: url("../../assets/home_page/icons/chevron_right.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.links > a:hover {
+  text-decoration: underline;
+}
+
+.link-one {
+  padding-right: 20px;
+}
+
+.link-two {
+  padding-right: 25px;
+}
+
+.link-chevron {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 0, 0);
+}
+
+/* Custom Items */
+.item-3,
+.item-4,
+.item-8 {
+  position: relative;
+  color: #cccccc;
+}
+
+.item-3 .text-wraper,
+.item-8 .text-wraper {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.item-7 .text-container {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.item-8 .links .link-one {
+  padding-right: 30px;
+  background-image: url("../../assets/home_page/icons/play_circle.svg");
+}
+
+.item-8 .links .link-two {
+  display: none;
+}

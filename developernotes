@@ -1,0 +1,11 @@
+
+// for use in the future
+const backgroundImage = 'http://localhost:3000/static/media/iphone13.2f8488d810d5f8ba274e.jpg'
+
+  const myStyle = {
+    width: " 1262px",
+    height: " 580px",
+    backgroundSize: "1262px 580px",
+    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${backgroundImage})`,
+  };  

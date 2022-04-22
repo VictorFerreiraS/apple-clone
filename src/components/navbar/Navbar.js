@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link to="iphone">iPhone</Link>
           <Link to="/watch">Watch</Link>
           <Link to="/airpods">AirPods</Link>
-          <Link to="/tvandhome">Home & TV</Link>
+          <Link to="/tvandhome">TV & Home</Link>
           <Link to="/onlyonapple">Only on Apple</Link>
           <Link to="/accessories">Accessories</Link>
           <Link to="/support">Support</Link>

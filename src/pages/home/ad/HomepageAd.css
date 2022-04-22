@@ -1,0 +1,68 @@
+.homepage-ad-container {
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  text-decoration: none;
+  color: #1472d0;
+  background-color: #f5f5f7;
+}
+
+.homepage-ad {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-ad > a {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #1472d0;
+  text-decoration: none;
+}
+.homepage-ad > a:hover {
+  text-decoration: underline;
+}
+
+.homepage-ad-image {
+  width: 122px;
+  height: 32px;
+  margin-right: 10px;
+  background-image: url("../../../assets/home_page/icons/unicef_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.arrow-link {
+  padding-right: 16px;
+  background-image: url("../../../assets/home_page/icons/north_east.svg");
+  background-repeat: no-repeat;
+  background-position: right 80%;
+  background-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-ad {
+    max-width: 250px;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .homepage-ad-image {
+    width: 106px;
+    height: 28px;
+  }
+
+  .homepage-ad > a {
+    padding-top: 5px;
+    font-size: 14px;
+    flex-direction: column;
+    line-break: loose;
+  }
+
+.arrow-link {
+  padding-top: 8px;
+}
+}

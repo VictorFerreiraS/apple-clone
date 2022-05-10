@@ -1,9 +1,27 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // styles
-import "./Navbar.css";
+import "./DesktopNavbar.css";
+import "./MobileNavbar.scss";
 
 export default function Navbar() {
+  const [className, setClassName] = useState('menu-of')
+  const [active, setActive] = useState(false);
+
+  const toggle = () => {
+    active ? setActive(false) : setActive(true);
+
+
+    if (active) {
+      setClassName('menu')
+    } else{
+      setClassName('menu-on')
+    }
+  };
+
+  console.log(active, className);
+
   return (
     <div className="navbar">
       <nav className="desktop-navbar">
@@ -25,7 +43,20 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      {/* <div className="mobile-navbar"></dipath='/accessories'> */}
+      <nav className="mobile-navbar">
+        {/* Menu animation */}
+        <div className="menu-container">
+          <div
+            onClick={toggle}
+            className={className}
+          >
+            <div className="top-bar"></div>
+            <div className="bottom-bar"></div>
+          </div>
+        </div>
+        <Link className="apple-logo" to="/" />
+        <div className="mobile-bag-image"></div>
+      </nav>
     </div>
   );
 }

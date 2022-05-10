@@ -1,4 +1,44 @@
-/* Desktop */
+
+/* Styles for Both */
+.apple-logo {
+  width: 16px;
+  background-color: #d7d7d7;
+  background-size: 14px 44px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-mask: url("../../assets/navbar/apple_image.svg") no-repeat 50% 50%;
+  mask: url("../../assets/navbar/apple_image.svg") no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  transition: 200ms;
+}
+
+.apple-logo:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.bag-image,
+.search-image {
+  width: 18px;
+  background-color: #d7d7d7;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-mask: url("../../assets/navbar/bag.svg") no-repeat 50% 50%;
+  mask: url("../../assets/navbar/bag.svg") no-repeat 50% 50%;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.bag-image:hover,
+.search-image:hover {
+  background-color: #ffffff;
+}
+
+/* Desktop  Exclusive*/
+@media only screen and (min-width: 756px) { 
+
+
 .desktop-navbar {
   padding: 0 5%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -23,42 +63,11 @@
   color: #ffffff;
 }
 
-.desktop-navbar > ul > .apple-logo {
-  width: 14px;
-  background-color: #d7d7d7;
-  background-size: 14px 44px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-mask: url("../../assets/navbar/apple_image.svg") no-repeat 50% 50%;
-  mask: url("../../assets/navbar/apple_image.svg") no-repeat 50% 50%;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  transition: 200ms;
-}
 
-.desktop-navbar > ul > .apple-logo:hover {
-  background-color: rgb(255, 255, 255);
-}
-
-.desktop-navbar > ul > .bag-image,
-.search-image {
-  width: 18px;
-  background-color: #d7d7d7;
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-mask: url("../../assets/navbar/bag.svg") no-repeat 50% 50%;
-  mask: url("../../assets/navbar/bag.svg") no-repeat 50% 50%;
-  cursor: pointer;
-  transition: 200ms;
-}
 .desktop-navbar > ul > .search-image {
   -webkit-mask: url("../../assets/navbar/search_image.svg") no-repeat 50% 50%;
   mask: url("../../assets/navbar/search_image.svg") no-repeat 50% 50%;
 }
 
 
-.desktop-navbar > ul > .bag-image:hover,
-.search-image:hover {
-  background-color: #ffffff;
 }

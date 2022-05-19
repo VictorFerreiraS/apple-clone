@@ -1,0 +1,124 @@
+@media only screen and (max-width: 756px) {
+  .desktop-navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-bag-image {
+    width: 48px;
+    height: 48px;
+    background-color: #d7d7d7;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    mask: url("../../assets/navbar/apple_bag.svg") no-repeat 50% 50%;
+    cursor: pointer;
+    transition: 200ms;
+  }
+
+  .menu-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top-bar,
+  .bottom-bar {
+    position: absolute;
+    height: 1px;
+    width: 15px;
+    background-color: antiquewhite;
+  }
+
+  .menu .top-bar {
+    top: 20px;
+  }
+
+  .menu .bottom-bar {
+    top: 27px;
+  }
+
+  .menu .menu-content, 
+  .menu .unactive .menu-content {
+    overflow: hidden;
+  }
+
+  .menu .active .menu-content {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  .menu .active .menu-content .mobile-navbar {
+    width: 100%;
+    display: flex;
+    position: absolute;
+  }
+
+  /* Animations forwards */
+  .menu .active .top-bar {
+    transition-duration: 400ms;
+    transition-property: top, transform;
+    top: auto;
+    transform: rotate(-45deg);
+  }
+  .menu .active .bottom-bar {
+    transition-duration: 400ms;
+    transition-property: top, transform;
+    top: auto;
+    transform: rotate(45deg);
+  }
+
+  .menu .unactive .top-bar {
+    animation-name: reverse-top;
+    animation-duration: 400ms;
+  }
+  .menu .unactive .bottom-bar {
+    animation-name: reverse-bottom ;
+    animation-duration: 400ms;
+  }
+
+  @keyframes reverse-top {
+    0% {
+      top: auto;
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100%{
+      top: auto;
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes reverse-bottom {
+    0% {
+      top: auto;
+      transform: rotate(45deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100%{
+      top: auto;
+      transform: translateY(3px);
+    }
+  }
+}

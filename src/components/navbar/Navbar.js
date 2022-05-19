@@ -3,24 +3,23 @@ import { Link } from "react-router-dom";
 
 // styles
 import "./DesktopNavbar.css";
-import "./MobileNavbar.scss";
+import "./MobileNavbar.css";
 
 export default function Navbar() {
-  const [className, setClassName] = useState('menu-of')
+  const [activeClass, setActiveClass] = useState("");
   const [active, setActive] = useState(false);
 
   const toggle = () => {
     active ? setActive(false) : setActive(true);
 
-
     if (active) {
-      setClassName('menu')
-    } else{
-      setClassName('menu-on')
+      setActiveClass("unactive");
+    } else {
+      setActiveClass("active");
     }
   };
 
-  console.log(active, className);
+  console.log(active, `menu ${activeClass}`);
 
   return (
     <div className="navbar">
@@ -45,13 +44,15 @@ export default function Navbar() {
 
       <nav className="mobile-navbar">
         {/* Menu animation */}
-        <div className="menu-container">
-          <div
-            onClick={toggle}
-            className={className}
-          >
-            <div className="top-bar"></div>
-            <div className="bottom-bar"></div>
+        <div className="menu-icon-container">
+          <div onClick={toggle} className={`menu`}>
+            <div className={`${activeClass}`}>
+              <div className="top-bar"></div>
+              <div className="bottom-bar"></div>
+            </div>
+
+            
+
           </div>
         </div>
         <Link className="apple-logo" to="/" />

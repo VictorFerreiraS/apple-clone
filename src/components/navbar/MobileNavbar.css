@@ -4,7 +4,6 @@
   }
 
   .mobile-navbar {
-    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: space-between;
   }
@@ -12,23 +11,15 @@
   .mobile-bag-image {
     width: 48px;
     height: 48px;
-    background-color: #d7d7d7;
-    background-size: 24px;
+    background-size: 14px;
     background-repeat: no-repeat;
     background-position: center center;
-    mask: url("../../assets/navbar/apple_bag.svg") no-repeat 50% 50%;
+    background-image: url("../../assets/navbar/apple_bag.svg");
     cursor: pointer;
-    transition: 200ms;
+    transition-duration: 400ms;
+    transition-property: background;
   }
-
-  .menu-container {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
+  /* Menu buttom */
   .menu {
     width: 48px;
     height: 48px;
@@ -36,6 +27,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .menu-icon-container {
+    cursor: pointer;
   }
 
   .top-bar,
@@ -54,11 +49,6 @@
     top: 27px;
   }
 
-  .menu .menu-content, 
-  .menu .unactive .menu-content {
-    overflow: hidden;
-  }
-
   .menu .active .menu-content {
     width: 100%;
     display: flex;
@@ -71,7 +61,7 @@
     position: absolute;
   }
 
-  /* Animations forwards */
+  /* Cross Animations */
   .menu .active .top-bar {
     transition-duration: 400ms;
     transition-property: top, transform;
@@ -85,12 +75,12 @@
     transform: rotate(45deg);
   }
 
-  .menu .unactive .top-bar {
+  .menu .inactive .top-bar {
     animation-name: reverse-top;
     animation-duration: 400ms;
   }
-  .menu .unactive .bottom-bar {
-    animation-name: reverse-bottom ;
+  .menu .inactive .bottom-bar {
+    animation-name: reverse-bottom;
     animation-duration: 400ms;
   }
 
@@ -102,7 +92,7 @@
     50% {
       transform: rotate(0deg);
     }
-    100%{
+    100% {
       top: auto;
       transform: translateY(-4px);
     }
@@ -116,9 +106,94 @@
     50% {
       transform: rotate(0deg);
     }
-    100%{
+    100% {
       top: auto;
       transform: translateY(3px);
     }
+  }
+
+  /* Dropdown animation */
+  .mobile-menu .active {
+    background-color: black;
+    transition-duration: 400ms;
+    transition-property: background;
+  }
+
+  .mobile-menu .inactive {
+    background-color: #333333;
+    transition-duration: 400ms;
+    transition-property: background;
+  }
+  .mobile-menu .active .mobile-navbar .mobile-bag-image {
+    background-image: none;
+  }
+  .menu-dropdown .inactive {
+    height: 0vh;
+    visibility: hidden;
+    transition-duration: 400ms;
+    transition-property: height;
+  }
+
+  .menu-dropdown .active {
+    height: 100vh;
+    visibility: visible;
+    transition-duration: 400ms;
+    transition-property: height, background;
+  }
+
+  /* dropdown Styles */
+  .menu-dropdown .active .mobile-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-dropdown .active .mobile-links {
+    border-top: rgb(149, 149, 149) 1px solid;
+    padding: 0 40px;
+  }
+
+  .menu-dropdown .active .search-bar {
+    margin: 20px 10px;
+    padding: 0 10px;
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+  }
+
+  .menu-dropdown .active .search-bar .search-icon {
+    margin-right: 6px;
+    width: 18px;
+    height: 17px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://store.storeimages.cdn-apple.com/4982/store.apple.com/shop/rs-globalelements/dist/us/ac-globalnav-dist/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_search_image__cbllq1gkias2_small.svg");
+  }
+
+  .menu-dropdown .active .search-bar input {
+    height: 35px;
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    background-color: #1a1a1a;
+    color: whitesmoke;
+  }
+
+  .menu-dropdown .active .search-bar input:focus {
+    outline: none;
+  }
+
+  .menu-dropdown .active a:first-of-type {
+    border-top: none;
+  }
+
+  .menu-dropdown .active a {
+    padding: 10px 20px;
+    border-top: rgb(149, 149, 149) 1px solid;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
   }
 }
